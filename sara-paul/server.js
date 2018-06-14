@@ -35,9 +35,10 @@ app.use(express.static('./public'));
 // REVIEW: Routes for requesting HTML resources
 app.get('/new-article', (request, response) => {
   // COMMENT: What number(s) of the full-stack-diagram.png image correspond to this route? Be sure to take into account how the request was initiated, how it was handled, and how the response was delivered. Which method of article.js, if any, is interacting with this particular piece of `server.js`? What part of CRUD, if any, is being enacted/managed by this particular piece of code?
-  // Number 2 corresponds to app.get. It's not interacting with any methods. Browser is sending a request to the server (#2) and server is reading from the public directory (#6) and server return it to the browser (#5). 
+  // COMMENT RESPONSE: Number 2 corresponds to app.get. It's not interacting with any methods. Browser is sending a request to the server (#2) and server is reading from the public directory (#6) and server return it to the browser (#5). 
   response.sendFile('new.html', { root: './public' });
 });
+
 
 
 // REVIEW: Routes for making API calls to use CRUD Operations on our database
