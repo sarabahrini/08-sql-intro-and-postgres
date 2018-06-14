@@ -44,7 +44,9 @@ app.get('/new-article', (request, response) => {
 // REVIEW: Routes for making API calls to use CRUD Operations on our database
 app.get('/articles', (request, response) => {
   // COMMENT: What number(s) of the full-stack-diagram.png image correspond to this route? Be sure to take into account how the request was initiated, how it was handled, and how the response was delivered. Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
-  // PUT YOUR RESPONSE HERE
+  // this is looking at the database. So it is going from broswer to server on (2) and server to database on (3) and database to server on (4) and response from the server to the broswer on (5).
+  // Article.fetchAll is the method in article.js that is interacting with this particular piece of server.js.
+  // This is the "R" for read.
   client.query('')
     .then(function(result) {
       response.send(result.rows);
@@ -56,7 +58,10 @@ app.get('/articles', (request, response) => {
 
 app.post('/articles', (request, response) => {
   // COMMENT: What number(s) of the full-stack-diagram.png image correspond to this route? Be sure to take into account how the request was initiated, how it was handled, and how the response was delivered. Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
-  // PUT YOUR RESPONSE HERE
+  // The route for this process is 2, 3, 4 5.
+  //  Article.prototype.insertRecord.
+  // Create
+  
   let SQL = `
     INSERT INTO articles(title, author, "authorUrl", category, "publishedOn", body)
     VALUES ($1, $2, $3, $4, $5, $6);
