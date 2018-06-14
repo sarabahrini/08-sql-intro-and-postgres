@@ -61,7 +61,7 @@ app.post('/articles', (request, response) => {
   // The route for this process is 2, 3, 4 5.
   //  Article.prototype.insertRecord.
   // Create
-  
+
   let SQL = `
     INSERT INTO articles(title, author, "authorUrl", category, "publishedOn", body)
     VALUES ($1, $2, $3, $4, $5, $6);
@@ -87,7 +87,8 @@ app.post('/articles', (request, response) => {
 
 app.put('/articles/:id', (request, response) => {
   // COMMENT: What number(s) of the full-stack-diagram.png image correspond to this route? Be sure to take into account how the request was initiated, how it was handled, and how the response was delivered. Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
-  // PUT YOUR RESPONSE HERE
+  // 2, 3, 4, 5
+  // 
 
   let SQL = '';
   let values = [];
